@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi agenda</title>
+    <style>
+        * {
+            background-color: aliceblue;
+        }
+        h1 {
+            background-color: cornflowerblue;
+        }
+        #encabezado {
+            border: 1px solid;
+            background-color: cornflowerblue;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #cuerpo {
+            /* display: none; */
+            border: 1px solid;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .contenedor {
+            /* display: none; */
+            align-content: center;
+            text-align: center;
+            text-transform: capitalize;
+            margin-top: 10px;
+            width: 400px;
+            
+        }
+        .contenedor .iniciar {
+            display: inline-block;
+            text-align: center;
+        }
+        .contenedor .registrar {
+            display: inline-block;
+            text-align: center;
+        }
+        table{
+            width: 100vh;
+            border-collapse: collapse;
+            border: 1.5px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <main id="encabezado">
+        <h1>Mi gran agenda</h1>
+    </main>
+
+    <section id="cuerpo">
+        <p>Comienza a organizar tu dia a dia y logra tus grandes metas</p>
+
+        <button id="inicio-de-sesión">Iniciar sesión</button>
+        <button id="registrarse">Registrarse</button>
+
+        <div class="contenedor">
+            <div class="iniciar">
+                <label for="text">Ingrese su Email</label>
+                <br>
+                <input type="email">
+                <br><br>
+                <label for="text">Ingrese su Contraseña</label>
+                <br>
+                <input type="password">
+                <br><br>
+                <button onclick="iniciar()">Inciar Sesión</button>
+            </div>
+        </div>
+
+        <div class="contenedor">
+            <div class="registrar">
+                <label for="name">Ingrese su Nombre</label>
+                <br>
+                <input type="text">
+                <br><br>
+                <label for="email">Ingrese su Email</label>
+                <br>
+                <input type="email">
+                <br><br>
+                <label for="contraseña">Ingrese su Contraseña</label>
+                <br>
+                <input type="password">
+                <br><br>
+                <button onclick="registrarse()">Registrarse</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="app">
+        <h2>Sea bienvenido a su agenda personal</h2>
+        <div class="registro">
+            <h4>Compromisos</h4>
+            <input id="titulo" type="text" placeholder="Ingrese el título">
+            <input id="descripcion" type="text" placeholder="Ingrese una breve descripción">
+            <input id="lugar" type="text" placeholder="Ingrese el lugar del desarrolo de la actividad">
+            <input id="inicio-re" type="time" placeholder="Ingrese la hora del inicio de la actividad">
+            <input id="final" type="time" placeholder="Ingrese la hora de la finalizacion de la actividad">
+            <button onclick="agregar()">Generar Agenda</button>
+        </div>
+        <div class="contenido">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Lugar</th>
+                        <th>Hora</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="./pagina-principal.js"></script>
+</body>
+</html>
+
+<!-- #titulo, 
+#descripcion, 
+#lugar, 
+#inicio-re
+#final {
+    width: 80px;
+} -->
